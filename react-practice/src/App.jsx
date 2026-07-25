@@ -1,22 +1,32 @@
 import { useState, createContext } from "react";
-import Header from "./Day5/Header";
-import Profile from "./Day5/Profile";
-import LoginPanel from "./Day5/LoginPanel";
-import './Day5/User.css'
+import {createBrowserRouter, RouterProvider} from 'react-router-dom'
+import Workouts from "./Day5/Workouts";
+import Diet from "./Day5/Diet";
+import Progress from "./Day5/Progress";
+import Contact from "./Day5/Contact";
+import NotFound from "./Day5/NotFound";
+import GymNavbar from "./Day5/GymNavbar";
+import GymLayout from "./Day5/GymLayout";
 
-
-export const UserContext = createContext();
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <GymLayout/>,
+    children: [
+      { path: "/", element: <Workouts/> },
+      { path: "/diet", element: <Diet/> },
+      { path: "/progress", element: <Progress/> },
+      { path: "/contact", element: <Contact/> },
+      { path: "*", element: <NotFound/> }
+    ]
+  }
+]);
 
 function App() {
-  const [user, setUser] = useState(null);
-
+  
   return (
-    <div  className="user-container">
-      <UserContext.Provider value={{ user, setUser }}>
-        <Header />
-        <Profile />
-        <LoginPanel />
-      </UserContext.Provider>
+    <div>
+      <RouterProvider router={router}/>   
     </div>
   )
 
