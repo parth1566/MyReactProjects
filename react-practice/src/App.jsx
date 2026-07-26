@@ -1,12 +1,13 @@
 import { useState} from "react";
-import ExpenseSplitter from "./Revision/ExpenseSplitter";
+import Quiz from "./Revision/Quiz";
+import Options from "./Revision/Options";
   
 
 function App() {
   
   return (
     <div>
-      <ExpenseSplitter/>
+      <Quiz/>
     </div>
   )
 
