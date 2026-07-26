@@ -1,13 +1,13 @@
 import { useState} from "react";
-import Quiz from "./Revision/Quiz";
-import Options from "./Revision/Options";
+import Stopwatch from "./Revision/Stopwatch";
+
   
 
 function App() {
   
   return (
     <div>
-      <Quiz/>
+      <Stopwatch/>
     </div>
   )
 

@@ -1,0 +1,72 @@
+.timer-card {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 20px;
+  padding: 40px 50px;
+  max-width: 420px;
+  margin: 60px auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  border: 1px solid #475569;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.timer-title {
+  color: #f8fafc;
+  font-size: 26px;
+  margin: 0 0 20px 0;
+}
+
+.mode-btn {
+  padding: 10px 22px;
+  margin: 0 5px;
+  border: 1px solid #475569;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: white;
+  font-weight: bold;
+}
+
+.timer-display {
+  font-family: 'Courier New', monospace;
+  font-size: 72px;
+  font-weight: bold;
+  color: #f8fafc;
+  margin: 25px 0;
+  letter-spacing: 4px;
+}
+
+.btn-start, .btn-pause, .btn-reset {
+  padding: 12px 28px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-start { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.btn-pause { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.btn-reset { background: #475569; }
+
+.btn-start:hover, .btn-pause:hover, .btn-reset:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
