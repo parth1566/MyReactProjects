@@ -1,13 +1,12 @@
 import { useState} from "react";
-import Stopwatch from "./Revision/Stopwatch";
-
+import ContextApp from "./Revision/ContextApp";
   
 
 function App() {
   
   return (
     <div>
-      <Stopwatch/>
+      <ContextApp/>
     </div>
   )
 

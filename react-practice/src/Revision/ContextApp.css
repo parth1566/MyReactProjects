@@ -1,0 +1,79 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* ===== the two themes ===== */
+.app-shell.dark {
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.app-shell.light {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* ===== panels ===== */
+.panel {
+  max-width: 480px;
+  margin: 0 auto 20px;
+  padding: 20px 25px;
+  border-radius: 16px;
+  transition: background 0.4s ease, border 0.4s ease;
+}
+
+.dark .panel {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.light .panel {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.panel h3 {
+  margin-top: 0;
+}
+
+/* ===== inputs & buttons ===== */
+.ctx-input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  margin-right: 8px;
+}
+
+.dark .ctx-input {
+  background: #0f172a;
+  border: 1px solid #475569;
+  color: #f8fafc;
+}
+
+.light .ctx-input {
+  background: #f8fafc;
+  border: 1px solid #94a3b8;
+  color: #0f172a;
+}
+
+.ctx-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ctx-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 14px rgba(99, 102, 241, 0.4);
+}
