@@ -17,7 +17,7 @@ const ExpenseSplitter = () => {
         setName("");
         setAmount("");
     }
-    
+
     const total = expenses.reduce((sum, exp) => sum + exp.amount, 0);
   return (
     <div className='expense-card'>
