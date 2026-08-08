@@ -5,11 +5,14 @@ function App() {
     register,
     handleSubmit, 
     watch,
+    reset,
     formState: {errors, isSubmitting},
   } = useForm();
 
-  function onSubmit(data) {
+  async function onSubmit(data) {
+    await new Promise ((resolve) => setTimeout(resolve, 2000));
     console.log(data);
+    reset();
   }
  
   return (
@@ -45,10 +48,21 @@ function App() {
             })}/>
             <br />
             <br />
-            <button>Submit</button>
+            <label>Email:</label>
+            <input type="eMail"
+            {...register('eMail', {
+              required: "Email is required",
+              pattern: {value: /^\S+@\S+\.\S+$/}
+            })}/>
+            <br />
+            <br />
+            <button disabled={isSubmitting}>
+                    {isSubmitting ? "Submitting..." : "Submit"}
+            </button>
             {errors.userName && <p>{errors.userName.message}</p>}
             {errors.password && <p>{errors.password.message}</p>}
             {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
+            {errors.eMail && <p>{errors.eMail.message}</p>}
           </div>
         </form>
       </div>
