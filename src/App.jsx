@@ -4,18 +4,23 @@ function App() {
   const{
     register,
     handleSubmit, 
+    watch,
     formState: {errors, isSubmitting},
   } = useForm();
+
+  function onSubmit(data) {
+    console.log(data);
+  }
  
   return (
     <>
       <div>
-        <form >
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div>
             <label>Username: </label>
             <input 
             {...register('userName',{
-              required: "Username is required",
+              required: "Username is required!",
               minLength: {value: 3, message: "Min len should be 3"},
               maxLength: {value: 20, message: "Max len should be 20"},
               pattern: {
@@ -23,8 +28,27 @@ function App() {
                         message: "Letters only, no spaces"
             }})}/>
             <br />
+            <br />
+            <label>Password:</label>
+            <input type='password'
+            {...register('password', {
+              required: "Password is required",
+              minLength: {value: 6, message: "Min len should be 6"}
+            })}/>
+            <br />
+            <br />
+            <label>Confirm Password:</label>
+            <input type='password'
+            {...register('confirmPassword', {
+              required: "Confirm Password is required",
+              validate: (value) => value === watch("password") || "Passwords do not match"
+            })}/>
+            <br />
+            <br />
             <button>Submit</button>
             {errors.userName && <p>{errors.userName.message}</p>}
+            {errors.password && <p>{errors.password.message}</p>}
+            {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
           </div>
         </form>
       </div>
