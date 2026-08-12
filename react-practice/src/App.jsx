@@ -1,6 +1,6 @@
 import { useState} from "react";
 import ToDoList from "./Revision/ToDoList";
-import RenderCounter from "./Revision/RenderCounter";
+import RefStopwatch from "./Revision/RefStopwatch";
 
 
 
@@ -8,7 +8,7 @@ function App() {
   
   return (
     <div>
-      <RenderCounter/>
+      <RefStopwatch/>
     </div>
   )
 
