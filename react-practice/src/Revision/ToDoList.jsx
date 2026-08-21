@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css'  
+import { useMemo } from 'react';
 
 const ToDoList = () => {
     const[toDos, setToDos] = useState([]);
@@ -29,17 +30,12 @@ const ToDoList = () => {
         ))
     }
 
-    let visibleToDos;
-        if(filter === "active") {
-            visibleToDos = toDos.filter(toDo => !toDo.completed);
-        }
-        else if(filter === "completed") {
-            visibleToDos = toDos.filter(toDo => toDo.completed);
-        }
-        else {
-            visibleToDos = toDos;
-        }
-
+  const visibleToDos = useMemo(() => {
+    if (filter === "active")
+         return toDos.filter(toDo => !toDo.completed);
+    else if (filter === "completed") return toDos.filter(toDo => toDo.completed);
+    else return toDos;
+}, [toDos, filter]);
 
   return (
     <>
