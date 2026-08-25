@@ -31,10 +31,12 @@ const ToDoList = () => {
     }
 
   const visibleToDos = useMemo(() => {
-    if (filter === "active")
-         return toDos.filter(toDo => !toDo.completed);
-    else if (filter === "completed") return toDos.filter(toDo => toDo.completed);
-    else return toDos;
+    if (filter === "active"){
+         return toDos.filter(toDo => !toDo.completed)}
+    else if (filter === "completed"){
+       return toDos.filter(toDo => toDo.completed)}
+    else {
+      return toDos};
 }, [toDos, filter]);
 
   return (
