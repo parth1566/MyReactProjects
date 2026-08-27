@@ -23,7 +23,7 @@ const MemoDemo = () => {
                 value={text}
                 onChange={(e) => setText(e.target.value)} />
             <p>{text}</p>
-        </div>
+        </div>  
     )
 }
 
