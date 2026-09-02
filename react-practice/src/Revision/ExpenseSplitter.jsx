@@ -22,8 +22,8 @@ const ExpenseSplitter = () => {
   return (
     <div className='expense-card'>
       <h1 className='expense-title'>💰 Expense Splitter</h1>
-      <input className = 'expense-input' type="text" value={name} onChange={(e) => setName(e.target.value)}/>
-      <input className = 'expense-input' type="number" value={amount} onChange={(e) => setAmount(e.target.value)} />
+      <input className = 'expense-input' type="text" value={name} placeholder='Enter item name ' onChange={(e) => setName(e.target.value)}/>
+      <input className = 'expense-input' type="number" value={amount} placeholder='Enter Amount' onChange={(e) => setAmount(e.target.value)} />
       <button className='expense-btn' onClick={handleAdd}>Add expense</button>
       {expenses.length === 0 ? (
         <p className='expense-empty'>No expenses yet 🪹</p>
@@ -36,7 +36,7 @@ const ExpenseSplitter = () => {
     )}
       <h3 className='expense-total'>Total: ₹{total}</h3>
       <input className = 'expense-input'  type="number" value={people} onChange={(e) => setPeople(e.target.value)} />
-      {people > 0 && <h3>Each person pays: ₹{(total / people).toFixed(2)}</h3>} 
+      {people > 0 && <h3 style={{color: 'beige'}}>Each person pays: ₹{(total / people).toFixed(2)}</h3>} 
     </div>
   )
 }
